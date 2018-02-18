@@ -5,6 +5,8 @@ function Word() {
 	this.word = '';
   this.solved = false;
   this.guesses = 10;
+	this.guessed = '';
+	this.display = '';
 
 	// pushes each letter object to the array
 	this.ltrObj = function(word) {
@@ -14,12 +16,15 @@ function Word() {
 		}
 	};
 	this.ltrCheck = function(gsdltr) {
-    var display = "";
+    this.display = '';
 		for (var i = 0; i < this.ltrArr.length; i++) {
 			this.ltrArr[i].check(gsdltr);
-			display += this.ltrArr[i].showLetter();
+			this.display += this.ltrArr[i].showLetter();
 		}
-    console.log("\n", display);
+		if (this.display === this.word){
+			this.solved = true;
+		}
+    console.log("\n", this.display);
 	};
 
 
