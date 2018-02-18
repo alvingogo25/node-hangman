@@ -1,17 +1,22 @@
-function Letter() {
+function Letter(ltr, gsdltr) {
   this.guessed = false;
-  this.letter = "";
+  this.letter = ltr;
   this.showLetter = function() {
     if (!this.guessed) {
-      console.log("_");
+      return " _ ";
     }
-    else (
-      console.log(this.letter)
-    )
+    else {
+      return this.letter
+    };
   };
-  this.check = function(x) {
-    if (x == this.letter) {
+  this.check = function(gsdltr) {
+    if (gsdltr == this.letter) {
       this.guessed = true;
     };
   };
 }
+
+var letter = new Letter('k', 'o');
+// console.log(letter.guessed, letter.letter, letter.showLetter(), letter.check('k'));
+
+module.exports = Letter;
