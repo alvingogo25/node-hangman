@@ -15,12 +15,14 @@ function Word() {
 			this.word += word[i] + " ";
 		}
 	};
+	// checks if the letter guessed is correct
 	this.ltrCheck = function(gsdltr) {
     this.display = '';
 		for (var i = 0; i < this.ltrArr.length; i++) {
 			this.ltrArr[i].check(gsdltr);
 			this.display += this.ltrArr[i].showLetter();
 		}
+		// checks if the word is solved
 		if (this.display === this.word){
 			this.solved = true;
 		}
@@ -29,7 +31,7 @@ function Word() {
 
 
 };
-
+// tests cases
 // var wrd = new Word('apple', 'l');
 // wrd.ltrObj();
 // wrd.ltrCheck('e');
