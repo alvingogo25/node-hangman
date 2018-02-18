@@ -1,6 +1,6 @@
-# node-hangman
+# Node Hangman
 
-This is a hangman game playable in Node using constructor functions across separate files, and the node package inquirer.
+This is a hangman game playable on command line using constructor functions across separate files, and the node package inquirer.
 
 ## Instructions
 
