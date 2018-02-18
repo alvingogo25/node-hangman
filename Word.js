@@ -1,23 +1,25 @@
 var Letter = require('./Letter.js');
 
-function Word(word, gsdltr) {
+function Word() {
 	this.ltrArr = [];
-	this.word = word;
-	// this.display = '';
+	this.word = '';
+  this.solved = false;
+  this.guesses = 10;
+
 	// pushes each letter object to the array
-	this.ltrObj = function() {
-		for (var i = 0; i < this.word.length; i++) {
-			this.wordArr.push(new Letter(this.word[i]));
-			// var show = this.wordArr[i].showLetter();
+	this.ltrObj = function(word) {
+		for (var i = 0; i < word.length; i++) {
+			this.ltrArr.push(new Letter(word[i]));
+			this.word += word[i] + " ";
 		}
 	};
 	this.ltrCheck = function(gsdltr) {
-		var display = '';
+    var display = "";
 		for (var i = 0; i < this.ltrArr.length; i++) {
 			this.ltrArr[i].check(gsdltr);
 			display += this.ltrArr[i].showLetter();
 		}
-    console.log(display);
+    console.log("\n", display);
 	};
 
 

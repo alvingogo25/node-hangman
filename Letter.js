@@ -1,12 +1,12 @@
-function Letter(ltr, gsdltr) {
+function Letter(ltr) {
   this.guessed = false;
   this.letter = ltr;
   this.showLetter = function() {
     if (!this.guessed) {
-      return " _ ";
+      return "_ ";
     }
     else {
-      return this.letter
+      return this.letter + " ";
     };
   };
   this.check = function(gsdltr) {
@@ -16,7 +16,7 @@ function Letter(ltr, gsdltr) {
   };
 }
 
-var letter = new Letter('k', 'o');
+// var letter = new Letter('k', 'o');
 // console.log(letter.guessed, letter.letter, letter.showLetter(), letter.check('k'));
 
 module.exports = Letter;
